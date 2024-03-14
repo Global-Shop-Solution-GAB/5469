@@ -1,0 +1,1937 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmSalesHist..Create
+Gui.frmSalesHist..Caption("Sales History")
+Gui.frmSalesHist..Size(15210,9930)
+Gui.frmSalesHist..MinX(15210)
+Gui.frmSalesHist..MinY(9930)
+Gui.frmSalesHist..Position(0,0)
+Gui.frmSalesHist..BackColor(-2147483633)
+Gui.frmSalesHist..MousePointer(0)
+Gui.frmSalesHist..Event(UnLoad,frmSalesHist_UnLoad)
+Gui.frmSalesHist.GsGCSalesHist.Create(GsGridControl)
+Gui.frmSalesHist.GsGCSalesHist.Size(15075,8235)
+Gui.frmSalesHist.GsGCSalesHist.Position(15,1395)
+Gui.frmSalesHist.GsGCSalesHist.Event(RowCellClick,GsGCSalesHist_RowCellClick)
+Gui.frmSalesHist.GsGCSalesHist.Event(CellValueChanged,GsGCSalesHist_CellValueChanged)
+Gui.frmSalesHist.frameDates.Create(Frame)
+Gui.frmSalesHist.frameDates.Size(3240,1230)
+Gui.frmSalesHist.frameDates.Position(15,105)
+Gui.frmSalesHist.frameDates.Caption("Date Range")
+Gui.frmSalesHist.dtpStartDt.Create(DatePicker)
+Gui.frmSalesHist.dtpStartDt.Size(1470,285)
+Gui.frmSalesHist.dtpStartDt.Position(75,495)
+Gui.frmSalesHist.dtpStartDt.Parent("frameDates")
+Gui.frmSalesHist.lblStartDt.Create(Label,"Start",True,600,255,0,75,300,True,0,"Arial",8,-2147483633,0)
+Gui.frmSalesHist.lblStartDt.Parent("frameDates")
+Gui.frmSalesHist.lblEndDt.Create(Label,"End",True,435,255,0,1665,300,True,0,"Arial",8,-2147483633,0)
+Gui.frmSalesHist.lblEndDt.Parent("frameDates")
+Gui.frmSalesHist.dtpEndDt.Create(DatePicker)
+Gui.frmSalesHist.dtpEndDt.Size(1470,285)
+Gui.frmSalesHist.dtpEndDt.Position(1665,495)
+Gui.frmSalesHist.dtpEndDt.Parent("frameDates")
+Gui.frmSalesHist.chkAllDates.Create(CheckBox)
+Gui.frmSalesHist.chkAllDates.Size(1065,360)
+Gui.frmSalesHist.chkAllDates.Position(75,825)
+Gui.frmSalesHist.chkAllDates.Parent("frameDates")
+Gui.frmSalesHist.chkAllDates.Caption("All Dates")
+Gui.frmSalesHist.chkAllDates.Event(Click,chkAllDates_Click)
+Gui.frmSalesHist.frameOptions.Create(Frame)
+Gui.frmSalesHist.frameOptions.Size(8715,1230)
+Gui.frmSalesHist.frameOptions.Position(3315,120)
+Gui.frmSalesHist.frameOptions.Caption("Options")
+Gui.frmSalesHist.cboCustomers.Create(ComboBox)
+Gui.frmSalesHist.cboCustomers.Size(2340,330)
+Gui.frmSalesHist.cboCustomers.Position(60,300)
+Gui.frmSalesHist.cboCustomers.Parent("frameOptions")
+Gui.frmSalesHist.cboParts.Create(ComboBox)
+Gui.frmSalesHist.cboParts.Size(2340,330)
+Gui.frmSalesHist.cboParts.Position(2490,300)
+Gui.frmSalesHist.cboParts.Parent("frameOptions")
+Gui.frmSalesHist.cboPL.Create(ComboBox)
+Gui.frmSalesHist.cboPL.Size(2340,330)
+Gui.frmSalesHist.cboPL.Position(2490,735)
+Gui.frmSalesHist.cboPL.Parent("frameOptions")
+Gui.frmSalesHist.chkFreight.Create(CheckBox)
+Gui.frmSalesHist.chkFreight.Size(1200,255)
+Gui.frmSalesHist.chkFreight.Position(7410,375)
+Gui.frmSalesHist.chkFreight.Parent("frameOptions")
+Gui.frmSalesHist.chkFreight.Caption("Incl Freight")
+Gui.frmSalesHist.chkProgress.Create(CheckBox)
+Gui.frmSalesHist.chkProgress.Size(1290,225)
+Gui.frmSalesHist.chkProgress.Position(7410,630)
+Gui.frmSalesHist.chkProgress.Parent("frameOptions")
+Gui.frmSalesHist.chkProgress.Caption("Incl Prog Bill")
+Gui.frmSalesHist.cmdRefresh.Create(Button)
+Gui.frmSalesHist.cmdRefresh.Size(975,315)
+Gui.frmSalesHist.cmdRefresh.Position(7410,870)
+Gui.frmSalesHist.cmdRefresh.Caption("REFRESH")
+Gui.frmSalesHist.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.frmSalesHist.cmdRefresh.Parent("frameOptions")
+Gui.frmSalesHist.cboCustNo.Create(ComboBox)
+Gui.frmSalesHist.cboCustNo.Visible(False)
+Gui.frmSalesHist.cboCustNo.Size(2340,330)
+Gui.frmSalesHist.cboCustNo.Position(60,300)
+Gui.frmSalesHist.cboCustNo.Parent("frameOptions")
+Gui.frmSalesHist.cboCustNo.Enabled(False)
+Gui.frmSalesHist.chkCustNo.Create(CheckBox)
+Gui.frmSalesHist.chkCustNo.Size(1200,255)
+Gui.frmSalesHist.chkCustNo.Position(7410,135)
+Gui.frmSalesHist.chkCustNo.Parent("frameOptions")
+Gui.frmSalesHist.chkCustNo.Caption("Cust No")
+Gui.frmSalesHist.chkCustNo.Event(Click,chkCustNo_Click)
+Gui.frmSalesHist.cboSalesOrder.Create(ComboBox)
+Gui.frmSalesHist.cboSalesOrder.Size(2340,330)
+Gui.frmSalesHist.cboSalesOrder.Position(60,735)
+Gui.frmSalesHist.cboSalesOrder.Parent("frameOptions")
+Gui.frmSalesHist.cboSort.Create(ComboBox)
+Gui.frmSalesHist.cboSort.Size(2340,330)
+Gui.frmSalesHist.cboSort.Position(4920,300)
+Gui.frmSalesHist.cboSort.Parent("frameOptions")
+Gui.frmSalesHist.cboSerial.Create(ComboBox)
+Gui.frmSalesHist.cboSerial.Size(2340,330)
+Gui.frmSalesHist.cboSerial.Position(4920,735)
+Gui.frmSalesHist.cboSerial.Parent("frameOptions")
+Gui.frmSalesHist.lblStatus.Create(Label,"Label",False,2955,255,0,12060,870,True,0,"Arial",8,-2147483633,0)
+Gui.frmSalesHist.pgbStatus.Create(ProgressBar)
+Gui.frmSalesHist.pgbStatus.Visible(False)
+Gui.frmSalesHist.pgbStatus.Size(2940,255)
+Gui.frmSalesHist.pgbStatus.Position(12075,1080)
+Gui.frmSalesHist.cmdUpdateCache.Create(Button)
+Gui.frmSalesHist.cmdUpdateCache.Size(1785,375)
+Gui.frmSalesHist.cmdUpdateCache.Position(13305,60)
+Gui.frmSalesHist.cmdUpdateCache.Caption("Update Cache Data")
+Gui.frmSalesHist.cmdUpdateCache.Event(Click,cmdUpdateCache_Click)
+Gui.frmProfit..Create
+Gui.frmProfit..Caption("Profit Pie Chart")
+Gui.frmProfit..Size(11400,8370)
+Gui.frmProfit..MinX(0)
+Gui.frmProfit..MinY(0)
+Gui.frmProfit..Position(0,0)
+Gui.frmProfit..BackColor(-2147483633)
+Gui.frmProfit..MousePointer(0)
+Gui.frmProfit..Event(UnLoad,frmProfit_UnLoad)
+Gui.frmProfit.GsChartProfit.Create(GsChart)
+Gui.frmProfit.GsChartProfit.Size(11325,8070)
+Gui.frmProfit.GsChartProfit.Position(0,0)
+Gui.frmWeb..Create
+Gui.frmWeb..Size(4035,1695)
+Gui.frmWeb..MinX(0)
+Gui.frmWeb..MinY(0)
+Gui.frmWeb..Position(0,0)
+Gui.frmWeb..BackColor(-2147483633)
+Gui.frmWeb..MousePointer(0)
+Gui.frmWeb..Caption("Global Shop Solutions - Web Sites")
+Gui.frmWeb..Event(UnLoad,frmWeb_UnLoad)
+Gui.frmWeb..MaxButton(False)
+Gui.frmWeb..MinButton(False)
+Gui.frmWeb..Moveable(False)
+Gui.frmWeb..Sizeable(False)
+Gui.frmWeb.cmdGSS.Create(Button)
+Gui.frmWeb.cmdGSS.Size(3615,375)
+Gui.frmWeb.cmdGSS.Position(120,45)
+Gui.frmWeb.cmdGSS.Caption("Global Shop Solutions")
+Gui.frmWeb.cmdGSS.Event(Click,cmdGSS_Click)
+Gui.frmWeb.cmdSerV.Create(Button)
+Gui.frmWeb.cmdSerV.Size(3615,375)
+Gui.frmWeb.cmdSerV.Position(120,450)
+Gui.frmWeb.cmdSerV.Caption("ServiceWeb")
+Gui.frmWeb.cmdSerV.Event(Click,cmdServ_Click)
+Gui.frmWeb.cmdUpd.Create(Button)
+Gui.frmWeb.cmdUpd.Size(3615,375)
+Gui.frmWeb.cmdUpd.Position(120,855)
+Gui.frmWeb.cmdUpd.Caption("GSS Updates")
+Gui.frmWeb.cmdUpd.Event(Click,cmdUpd_Click)
+Gui.FormRMA..Create
+Gui.FormRMA..Caption("RMA(s)")
+Gui.FormRMA..Size(12525,5280)
+Gui.FormRMA..MinX(0)
+Gui.FormRMA..MinY(0)
+Gui.FormRMA..Position(0,0)
+Gui.FormRMA..BackColor(-2147483633)
+Gui.FormRMA..MousePointer(0)
+Gui.FormRMA..Event(UnLoad,FormRMA_UnLoad)
+Gui.FormRMA.GsGridControlRMA.Create(GsGridControl)
+Gui.FormRMA.GsGridControlRMA.Size(12330,4920)
+Gui.FormRMA.GsGridControlRMA.Position(30,30)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	V.Global.bLoadData.Declare
+	V.Global.bLongPart.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	'Hooks: Script 10-51090	
+	V.Local.sIcon.Declare
+	V.Local.sGssLogo.Declare
+	V.Local.dStart.Declare
+	V.Local.sDir.Declare
+	V.Local.bRet.Declare
+	
+	F.Intrinsic.Control.If(V.Ambient.IsInTaskScheduler)
+		F.Intrinsic.Control.CallSub(cmdUpdateCache_Click,"Merge","N")
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\Custom",V.Caller.GlobalDir,V.Local.sDir)
+		F.Intrinsic.File.DirExists(V.Local.sDir,V.Local.bRet)
+		
+		F.Intrinsic.Control.If(V.Local.bRet,=,False)
+			F.Intrinsic.File.CreateDir(V.Local.sDir)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("{0}\Custom\5469",V.Caller.GlobalDir,V.Local.sDir)
+		F.Intrinsic.File.DirExists(V.Local.sDir,V.Local.bRet)
+		
+		F.Intrinsic.Control.If(V.Local.bRet,=,False)
+			F.Intrinsic.File.CreateDir(V.Local.sDir)
+		F.Intrinsic.Control.EndIf
+		
+		'Set Date to 1 yr back
+		F.Intrinsic.Date.DateAdd("YYYY",-1,V.Ambient.Date,V.Local.dStart)
+		Gui.frmSalesHist.dtpStartDt.Value(V.Local.dStart)
+		
+		F.Intrinsic.Control.CallSub(Create_DataTables)
+		F.Intrinsic.Control.CallSub(Build_RMA_Table)
+		F.Intrinsic.Control.CallSub(Set_RMA_Properties)
+		F.Intrinsic.Control.CallSub(SetAnchors)
+		F.Intrinsic.Control.CallSub(CheckLongPart)
+		F.Intrinsic.Control.CallSub(LoadComboBoxes)
+		F.Intrinsic.Control.CallSub(SetContextMenus)
+		F.Intrinsic.Control.If(V.Caller.Hook,=,51090)
+			F.Intrinsic.Control.If(V.Passed.DATA-CRM-CompID,<>,"")
+				Gui.frmSalesHist.cboCustNo.Text(V.Passed.DATA-CRM-CompID)
+				Gui.frmSalesHist.cboCustomers.Text(V.Passed.DATA-CRM-CompName)
+				F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		Gui.frmSalesHist..Show
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.frmSalesHist_UnLoad.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.frmSalesHist_UnLoad.End
+
+Program.Sub.SetAnchors.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sCaption.Declare
+	
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+	
+	Gui.frmSalesHist.frameDates.Anchor(5)
+	Gui.frmSalesHist.frameOptions.Anchor(5)
+'	Gui.frmSalesHist.frameTotals.Anchor(10)
+'	Gui.frmSalesHist.picGSS.Anchor(1)
+	Gui.frmSalesHist.GsGCSalesHist.Anchor(15)
+	Gui.frmSalesHist.lblStatus.Anchor(9)
+	Gui.frmSalesHist.pgbStatus.Anchor(9)
+	Gui.frmProfit.GsChartProfit.Anchor(15)
+	Gui.frmSalesHist.cmdUpdateCache.Anchor(9)
+	
+'	'Cost
+'	F.Intrinsic.String.Build("Cost ({0})",V.Company.CurrencySymbol,V.Local.sCaption)
+'	F.Intrinsic.String.Replace(V.Local.sCaption,"USD","",V.Local.sCaption)
+'	Gui.frmSalesHist.lblCost.Caption(V.Local.sCaption)
+'	'Total_Cost
+'	F.Intrinsic.String.Build("Total Cost ({0})",V.Company.CurrencySymbol,V.Local.sCaption)
+'	F.Intrinsic.String.Replace(V.Local.sCaption,"USD","",V.Local.sCaption)
+'	Gui.frmSalesHist.lblTotCost.Caption(V.Local.sCaption)
+'	'Price
+'	F.Intrinsic.String.Build("Price ({0})",V.Company.CurrencySymbol,V.Local.sCaption)
+'	F.Intrinsic.String.Replace(V.Local.sCaption,"USD","",V.Local.sCaption)
+'	Gui.frmSalesHist.lblPrice.Caption(V.Local.sCaption)
+'	'Sales
+'	F.Intrinsic.String.Build("Sales ({0})",V.Company.CurrencySymbol,V.Local.sCaption)
+'	F.Intrinsic.String.Replace(V.Local.sCaption,"USD","",V.Local.sCaption)
+'	Gui.frmSalesHist.lblSales.Caption(V.Local.sCaption)
+'	'Profit
+'	F.Intrinsic.String.Build("Profit ({0})",V.Company.CurrencySymbol,V.Local.sCaption)
+'	F.Intrinsic.String.Replace(V.Local.sCaption,"USD","",V.Local.sCaption)
+'	Gui.frmSalesHist.lblProfitDollar.Caption(V.Local.sCaption)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.SetAnchors.End
+
+Program.Sub.CheckLongPart.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Global.General.ReadOption("400861",0,False,"5469",V.Global.bLongPart)
+	F.Intrinsic.Control.If(V.Global.bLongPart,=,False)
+		F.Global.General.ReadOption("400861",0,False,"0004",V.Global.bLongPart)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckLongPart.End
+
+Program.Sub.SetContextMenus.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmSalesHist..ContextMenuCreate("ctxSalesHist")
+	Gui.frmSalesHist.GsGCSalesHist.ContextMenuAttach("ctxSalesHist")
+	Gui.frmSalesHist..ContextMenuAddItem("ctxSalesHist","Refresh",0,"Refresh")
+	Gui.frmSalesHist..ContextMenuAddItem("ctxSalesHist","Export",0,"Export")
+	Gui.frmSalesHist..ContextMenuAddItem("ctxSalesHist","ResetColumns",0,"Reset Columns")
+	Gui.frmSalesHist..ContextMenuSetItemEventHandler("ctxSalesHist","Refresh","MenuClickRefresh")
+	Gui.frmSalesHist..ContextMenuSetItemEventHandler("ctxSalesHist","Export","MenuClickExport")
+	Gui.frmSalesHist..ContextMenuSetItemEventHandler("ctxSalesHist","ResetColumns","MenuClickResetColumns")
+	
+	Gui.frmProfit..ContextMenuCreate("ctxChart")
+	Gui.frmProfit.GsChartProfit.ContextMenuAttach("ctxChart")
+	Gui.frmProfit..ContextMenuAddItem("ctxChart","Export",0,"Export")
+	Gui.frmProfit..ContextMenuSetItemEventHandler("ctxChart","Export","MenuClickExport")
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickRefresh.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickRefresh.End
+
+Program.Sub.MenuClickExport.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	V.Local.sForm.Declare(String,"frmSalesHist")
+	V.Local.sControl.Declare
+	V.Local.bChart.Declare
+	
+	V.Local.bChart.Set(False)
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXSALESHIST")
+			V.Local.sControl.Set("GsGCSalesHist")
+		F.Intrinsic.Control.Case("CTXCHART")
+			V.Local.bChart.Set(True)
+			V.Local.sForm.Set("frmProfit")
+			V.Local.sControl.Set("GsChartProfit")
+	F.Intrinsic.Control.EndSelect
+
+	F.Intrinsic.Control.If(V.Local.bChart,=,False)
+		F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+		F.Intrinsic.Control.If(V.Local.bExcel)
+			F.Intrinsic.String.Build("{0}\GCG_5469_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.frmSalesHist.GsGCSalesHist.Export(V.Local.sFileExport,"xlsx")
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}\GCG_5469_Export.csv",V.Caller.LocalGssTempDir,V.Local.sFileExport)
+			F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+			F.Intrinsic.Control.If(V.Local.bFileLocked)
+				F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+				F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+			F.Intrinsic.Control.Else
+				Gui.frmSalesHist.GsGCSalesHist.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\{1}.jpg",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sFileExport)
+		Gui.[V.Local.sForm].[V.Local.sControl].ImageToFile("JPEG",V.Local.sFileExport)
+		F.Intrinsic.Task.ShellExec(0,"Open",V.Local.sFileExport,"","",0)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.MenuClickResetColumns.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXSALESHIST")
+			F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVSALESHIST",4637,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+			F.Intrinsic.Control.CallSub(LoadDtSalesHist)
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetColumns.End
+
+Program.Sub.LoadComboBoxes.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmSalesHist.cmdRefresh.Enabled(False)
+	Gui.frmSalesHist.lblStatus.Visible(True)
+	Gui.frmSalesHist.pgbStatus.Visible(True)
+	Gui.frmSalesHist.lblStatus.Caption("Loading Options....")
+	Gui.frmSalesHist.pgbStatus.Min(0)
+	Gui.frmSalesHist.pgbStatus.Max(100)
+	Gui.frmSalesHist.pgbStatus.Value(15)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection(300)
+	
+	'Customers
+	F.Data.DataTable.CreateFromSQL("dtCust","con","Select ' All Customers' As Customer,' All Customers' As Name_Customer Union Select RTrim(Customer) As Customer,RTrim(Name_Customer) As Name_Customer From Customer_Master Where Rec = '1';",True)
+	Gui.frmSalesHist.cboCustomers.AddItems("DataTable","dtCust","Name_Customer","Name_Customer")
+	Gui.frmSalesHist.cboCustomers.Text(" All Customers")
+	Gui.frmSalesHist.pgbStatus.Value(30)
+	'Create a Dictionary of the Customer Number and Name
+	F.Data.Dictionary.CreateFromDataTable("dCust","dtCust","Customer","Name_Customer")
+	'Customers Number
+'	F.Data.DataTable.CreateFromSQL("dtCustNo","con","Select ' All Customers' As Customer Union Select RTrim(Customer) From Customer_Master Where Rec = '1';",True)
+'	Gui.frmSalesHist.cboCustNo.AddItems("DataTable","dtCustNo","CUSTOMER","CUSTOMER")
+	Gui.frmSalesHist.cboCustNo.AddItems("DataTable","dtCust","Customer","Customer")
+	Gui.frmSalesHist.cboCustNo.Text(" All Customers")
+	Gui.frmSalesHist.pgbStatus.Value(40)
+	'Parts
+	F.Data.DataTable.CreateFromSQL("dtPart","con","Select ' All Parts' As Part Union Select RTrim(Part) As Part From Inventory_Mstr;",True)
+	Gui.frmSalesHist.cboParts.AddItems("DataTable","dtPart","PART","PART")
+	Gui.frmSalesHist.cboParts.Text(" All Parts")
+	Gui.frmSalesHist.pgbStatus.Value(50)
+	'Product Lines (PL)
+	F.Data.DataTable.CreateFromSQL("dtPL","con","Select ' All Product Lines' As PL Union Select RTrim(Product_Line) As Product_Line From Product_Line Where Key_Data = 'ORDPRDLN' And Product_Line <> '';",True)
+	Gui.frmSalesHist.cboPL.AddItems("DataTable","dtPL","PL","PL")
+	Gui.frmSalesHist.cboPL.Text(" All Product Lines")
+	Gui.frmSalesHist.pgbStatus.Value(60)
+	'Sales Order
+	F.Data.DataTable.CreateFromSQL("SONum","con","Select Distinct Rtrim(Order_No) as Order_No From V_Order_Hist_Head;",True)
+	Gui.frmSalesHist.cboSalesOrder.AddItem(" All Sales Orders",0)
+	Gui.frmSalesHist.cboSalesOrder.AddItems("DataTable","SONum","Order_No","Order_No")
+	Gui.frmSalesHist.cboSalesOrder.Text(" All Sales Orders")
+	Gui.frmSalesHist.pgbStatus.Value(70)
+	'Sort Code
+	F.Data.DataTable.CreateFromSQL("Sort","con","Select Distinct Rtrim(Code_Sort) as Sort_Code From V_Inventory_Mstr Order by Code_Sort",True)
+	Gui.frmSalesHist.cboSort.AddItem(" All Sort Codes",0)
+	Gui.frmSalesHist.cboSort.AddItems("DataTable","Sort","Sort_Code","Sort_Code")
+	Gui.frmSalesHist.cboSort.Text(" All Sort Codes")
+	Gui.frmSalesHist.pgbStatus.Value(80)
+	'Serial
+	F.Data.DataTable.CreateFromSQL("Serial","con","Select Distinct Rtrim(Serial) as Serial From V_Order_Hist_Lot Order by Serial;",True)
+	Gui.frmSalesHist.cboSerial.AddItem(" All Serial Numbers",0)
+	Gui.frmSalesHist.cboSerial.AddItems("DataTable","Serial","Serial","Serial")
+	Gui.frmSalesHist.cboSerial.Text(" All Serial Numbers")
+	
+	Gui.frmSalesHist.pgbStatus.Value(90)
+	
+	F.ODBC.Connection!con.Close
+	
+	Gui.frmSalesHist.pgbStatus.Value(100)
+	Gui.frmSalesHist.cmdRefresh.Enabled(True)
+	Gui.frmSalesHist.lblStatus.Visible(False)
+	Gui.frmSalesHist.pgbStatus.Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadComboBoxes.End
+
+Program.Sub.chkCustNo_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!chkCustNo.Value,=,0)
+		Gui.frmSalesHist.cboCustNo.Enabled(False)
+		Gui.frmSalesHist.cboCustNo.Visible(False)
+		Gui.frmSalesHist.cboCustomers.Visible(True)
+		Gui.frmSalesHist.cboCustomers.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.frmSalesHist.cboCustNo.Enabled(True)
+		Gui.frmSalesHist.cboCustNo.Visible(True)
+		Gui.frmSalesHist.cboCustomers.Visible(False)
+		Gui.frmSalesHist.cboCustomers.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndT	
+Program.Sub.chkCustNo_Click.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(LoadDtSalesHist)
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.LoadDtSalesHist.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sSQL.Declare
+	V.Local.dStart.Declare
+	V.Local.dEnd.Declare
+	V.Local.sCustomer.Declare
+	V.Local.sPart.Declare
+	V.Local.sPL.Declare
+	V.Local.sFilter.Declare
+	V.Local.sDataTable.Declare
+	V.Local.bSetProp.Declare
+	V.Local.sChildTable.Declare
+	V.Local.sSO.Declare
+	V.Local.sSort.Declare
+	V.Local.sSerial.Declare
+	
+	Gui.frmSalesHist.cmdRefresh.Enabled(False)
+	Gui.frmSalesHist.lblStatus.Visible(True)
+	Gui.frmSalesHist.pgbStatus.Visible(True)
+	Gui.frmSalesHist.lblStatus.Caption("Loading Sales History Data....")
+	Gui.frmSalesHist.pgbStatus.Min(0)
+	Gui.frmSalesHist.pgbStatus.Max(100)
+	Gui.frmSalesHist.pgbStatus.Value(15)
+	
+	V.Local.dStart.Set(V.Screen.frmSalesHist!dtpStartDt.Value)
+	V.Local.dEnd.Set(V.Screen.frmSalesHist!dtpEndDt.Value)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SuspendLayout
+	Gui.frmSalesHist.GsGCSalesHist.Enabled(False)
+
+	V.Global.bLoadData.Set(True)
+	
+	Gui.frmSalesHist.pgbStatus.Value(15)
+	
+	'Freight & Progress Bill Lines
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!chkFreight.Value,=,1)
+	F.Intrinsic.Control.AndIf(V.Screen.frmSalesHist!chkProgress.Value,=,1)
+		V.Local.sFilter.Set("Line_Type In ('S','D','F','P')")
+	F.Intrinsic.Control.ElseIf(V.Screen.frmSalesHist!chkFreight.Value,=,1)
+		V.Local.sFilter.Set("Line_Type In ('S','D','F')")
+	F.Intrinsic.Control.ElseIf(V.Screen.frmSalesHist!chkProgress.Value,=,1)
+		V.Local.sFilter.Set("Line_Type In ('S','D','P')")
+	F.Intrinsic.Control.Else
+		V.Local.sFilter.Set("Line_Type In ('S','D')")
+	F.Intrinsic.Control.EndIf
+	
+	'Specific Customer
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!chkCustNo.Value,=,0)
+		F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboCustomers.Value,<>," All Customers")
+			V.Local.sCustomer.Set(V.Screen.frmSalesHist!cboCustomers.Value)
+			V.Local.sCustomer.Set(V.Local.sCustomer.Trim)
+			F.Intrinsic.String.Build("{0} And Name_Cust_Ship = '{1}'",V.Local.sFilter,V.Local.sCustomer.PSQLFriendly,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboCustNo.Value,<>," All Customers")
+			V.Local.sCustomer.Set(V.Screen.frmSalesHist!cboCustNo.Value)
+			V.Local.sCustomer.Set(V.Local.sCustomer.Trim)
+			F.Intrinsic.String.Build("{0} And Customer = '{1}'",V.Local.sFilter,V.Local.sCustomer.PSQLFriendly,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	'Specific Part
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboParts.Value,<>," All Parts")
+		V.Local.sPart.Set(V.Screen.frmSalesHist!cboParts.Value)
+		V.Local.sPart.Set(V.Local.sPart.Trim)
+		F.Intrinsic.String.Build("{0} And Part = '{1}'",V.Local.sFilter,V.Local.sPart.PSQLFriendly,V.Local.sFilter)
+	F.Intrinsic.Control.EndIf
+	'Specific PLs
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboPL.Value,<>," All Product Lines")
+		V.Local.sPL.Set(V.Screen.frmSalesHist!cboPL.Value)
+		F.Intrinsic.String.Build("{0} And Product_Line = '{1}'",V.Local.sFilter,V.Local.sPL.Trim,V.Local.sFilter)
+	F.Intrinsic.Control.EndIf
+	
+	'Specific Sales Order
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboSalesOrder.Value,<>," All Sales Orders")
+		V.Local.sSO.Set(V.Screen.frmSalesHist!cboSalesOrder.Value)
+		F.Intrinsic.String.Build("{0} And Order_No = '{1}'",V.Local.sFilter,V.Local.sSO.Trim,V.Local.sFilter)
+	F.Intrinsic.Control.EndIf
+	
+	'Specific Sort Code
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboSort.Value,<>," All Sort Codes")
+		V.Local.sSort.Set(V.Screen.frmSalesHist!cboSort.Value)
+		F.Intrinsic.String.Build("{0} And Code_Sort = '{1}'",V.Local.sFilter,V.Local.sSort.Trim,V.Local.sFilter)
+	F.Intrinsic.Control.EndIf
+	
+	'Specific Serial
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboSerial.Value,<>," All Serial Numbers")	
+		V.Local.sSerial.Set(V.Screen.frmSalesHist!cboSerial.Value)
+		F.Intrinsic.String.Build("Select Order_No From V_Order_Hist_Lot Where Serial = '{0}'",V.Local.sSerial.Trim,V.Local.sSQL)
+		F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSO)
+		F.Intrinsic.Control.If(V.Local.sSO.Trim,<>,"")
+			F.Intrinsic.String.Build("'{0}'",V.Local.sSO,V.Local.sSO)
+			F.Intrinsic.String.Replace(V.Local.sSO,"#$#","','",V.Local.sSO)
+			F.Intrinsic.String.Build("{0} And Order_No IN ({1})",V.Local.sFilter,V.Local.sSO.Trim,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("Select Part From V_Order_Hist_Lot Where Serial = '{0}'",V.Local.sSerial.Trim,V.Local.sSQL)
+		F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSO)
+		F.Intrinsic.Control.If(V.Local.sSO.Trim,<>,"")
+			F.Intrinsic.String.Build("'{0}'",V.Local.sSO,V.Local.sSO)
+			F.Intrinsic.String.Replace(V.Local.sSO,"#$#","','",V.Local.sSO)
+			F.Intrinsic.String.Build("{0} And Part IN ({1})",V.Local.sFilter,V.Local.sSO.Trim,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!chkAllDates.Value,=,0)
+		F.Intrinsic.Control.If(V.Screen.frmSalesHist!cboSalesOrder.Value,=," All Sales Orders","AND",V.Screen.frmSalesHist!cboSerial.Value,=," All Serial Numbers")
+			'Filter out by Date
+			F.Intrinsic.String.Build("{0} And Date_Invoice >= '{1}' And Date_Invoice <= '{2}'",V.Local.sFilter,V.Local.dStart,V.Local.dEnd,V.Local.sFilter)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	Gui.frmSalesHist.pgbStatus.Value(20)
+
+	Gui.frmSalesHist.pgbStatus.Value(75)
+
+	F.Data.DataView.SetFilter("dtSalesHist","dvSalesHist",V.Local.sFilter)
+
+	Gui.frmSalesHist.pgbStatus.Value(90)
+	
+	Gui.frmSalesHist.pgbStatus.Value(100)
+	
+	Gui.frmSalesHist.GsGCSalesHist.ResumeLayout
+	
+	Gui.frmSalesHist.GsGCSalesHist.Enabled(True)
+	
+	Gui.frmSalesHist.cmdRefresh.Enabled(True)
+	Gui.frmSalesHist.lblStatus.Visible(False)
+	Gui.frmSalesHist.pgbStatus.Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadDtSalesHist.End
+
+Program.Sub.LoadGvSalesHist.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+'	Gui.frmSalesHist.GsGCSalesHist.AddGridviewFromDatatable("gvSalesHist","dtSalesHist")
+	F.Data.DataTable.AddColumn("dtSalesHist","Blank","String")
+	
+	Gui.frmSalesHist.GsGCSalesHist.AddGridviewFromDataview("gvSalesHist","dtSalesHist","dvSalesHist")
+	
+'	Gui.frmSalesHist.GsGCSalesHist.SuspendLayout()
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvSalesHist","MultiSelect",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvSalesHist","AllowSort",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvSalesHist","AllowFilter",True)
+	Gui.frmSalesHist.GsGCSalesHist.setGridViewProperty("gvSalesHist","OptionsDetailShowDetailTabs",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvSalesHist","OptionsViewShowGroupPanel",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridViewProperty("gvSalesHist","EnableAppearanceOddRow",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvSalesHist","OptionsViewShowAutoFilterRow",True)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Suffix","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","Visible",False)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","Visible",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","Caption"," ")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","MaxWidth",1)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","allowedit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","readonly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Blank","Fixed","Left")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","Caption","Part Number")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","Caption","Loc")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","Caption","PL")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","Caption","Description")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","Caption","Customer No")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","Caption","Customer Name")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","Caption","Ship To")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","Caption","Area")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","Caption","Invoice")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","Caption","Order No")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","Caption","Order Ln")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","Caption","Customer PO")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","Caption","Drop PO")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","Caption","Invoice Date")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","Caption","Shipped Date")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","Caption","Ship Date")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","Caption","Qty Shipped")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","Caption","Qty Ordered")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","Caption","Cost")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","Caption","Total Cost")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","Caption","Price")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","Caption","Sales")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","Caption","Profit")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","Caption","Margin")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","Caption","Margin $")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","Caption","Zone")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","Caption","Code")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","Caption","Code Description")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","Caption","Tax Exempt")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","Caption","Tax Rate")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","Caption","Tax Amount")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","Caption","Tax")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","Caption","SP")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","Caption","Branch")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","Caption","Line Type")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","Caption","Ship Via")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","Caption","Material")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","Caption","Labor")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","Caption","Overhead")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","Caption","Outside")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","Caption","Freight")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","Caption","Other")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","Caption","Tracking No")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","Caption","Work Order")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","Caption","WO Status")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Suffix","Caption","Order Suffix")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","Caption","Sort Code")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","Caption","Actual Hrs")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","Caption","Estimated Hrs")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","AllowEdit",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","ReadOnly",True)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","MinWidth","135")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","MinWidth","30")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","MinWidth","30")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","MinWidth","175")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","MinWidth","85")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","MinWidth","150")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","MinWidth","80")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","MinWidth","55")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","MinWidth","60")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","MinWidth","60")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","MinWidth","60")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","MinWidth","105")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","MinWidth","105")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","MinWidth","80")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","MinWidth","85")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","MinWidth","80")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","MinWidth","75")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","MinWidth","75")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","MinWidth","45")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","MinWidth","45")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","MinWidth","130")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","MinWidth","65")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","MinWidth","80")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","MinWidth","40")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","MinWidth","70")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","MinWidth","70")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","MinWidth","130")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","MinWidth","80")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","MinWidth","70")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","MinWidth","35")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","MinWidth","95")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","MinWidth","95")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Suffix","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Suffix","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Suffix","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Code_Sort","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","HeaderForeColor","White")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Location","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Name_Cust_Ship","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_PO","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Drop_PO","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Descr","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Branch","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ship_Via","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TrackingNo","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","HeaderHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","HeaderHAlignment","Center")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Product_Line","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Customer_Ship","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Area","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_State","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_1","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxStatus","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Salesperson","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Line_Type","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WOStatus","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","RMA","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","CellHAlignment","Center")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","CellHAlignment","Center")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Invoice","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_No","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Order_Line","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","WorkOrder","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Display_Part","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Part","CellForeColor","Blue")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Description","CellForeColor","Blue")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Invoice","DisplayCustomDateTime","d")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Date_Shipped","DisplayCustomDateTime","d")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Must_Dlvr_Date","DisplayCustomDateTime","d")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Shipped","DisplayCustomNumeric","#,###,###,##0.##")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Qty_Ordered","DisplayCustomNumeric","#,###,###,##0.##")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Total_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Price","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Sales","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Profit","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin","DisplayCustomNumeric","##0.00%")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Margin$","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax_Rate_1","DisplayCustomNumeric","##0.00%")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","TaxAmount","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Tax","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Matl","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Labor","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Ovhd","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Outs","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Frgt","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Oth","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Actual","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","Hours_Estimated","DisplayCustomNumeric","#,###,###,##0.0000")
+	
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Qty_Shipped","Qty_Shipped","Sum","","","n4")
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Qty_Ordered","Qty_Ordered","Sum","","","n4")
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Total_Cost","Total_Cost","Sum","","","n4")
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Sales","Sales","Sum","","","n4")
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Profit","Profit","Sum","","","n4")
+	Gui.frmSalesHist.GsGCSalesHist.AddSummaryItem("gvSalesHist","Margin$","Margin$","Sum","","","n4")
+	
+	Gui.frmSalesHist.GsGCSalesHist.AddStyleFormatCondition("gvSalesHist","RMA","ParentBlue","Equal","Y")
+	Gui.frmSalesHist.GsGCSalesHist.SetStyleFormatConditionProperty("gvSalesHist","RMA","ParentBlue","ForeColor","Blue")
+	
+	F.Intrinsic.Control.If(V.Caller.GSSVersion,>,2016.2)
+		Gui.frmSalesHist.GsGCSalesHist.AddGridGroupSummaryItem("gvSalesHist","Qty_Shipped","Qty_Shipped","Sum","| Tot Qty Ship: ","","n4")
+		Gui.frmSalesHist.GsGCSalesHist.AddGridGroupSummaryItem("gvSalesHist","Total_Cost","Total_Cost","Sum","| Tot Cost: ","","n4")
+		Gui.frmSalesHist.GsGCSalesHist.AddGridGroupSummaryItem("gvSalesHist","Sales","Sales","Sum","| Tot Sales: ","","n4")
+	'	Gui.frmSalesHist.GsGCSalesHist.AddGridGroupSummaryItem("gvSalesHist","Profit","Profit","Sum","| Tot Profit: ","","n4")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Global.bLongPart)
+		Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvSalesHist","DISPLAY_PART","MinWidth","250")
+	F.Intrinsic.Control.EndIf
+	
+'	Gui.frmSalesHist.GsGCSalesHist.ResumeLayout()
+	
+	Gui.frmSalesHist.GsGCSalesHist.AddGridviewFromDataview("gvLot","dtSalesHist","dvSalesHistLot")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","Editable",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","ReadOnly",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","MultiSelect",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","AllowSort",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","AllowFilter",True)
+'	Gui.frmSalesHist.GsGCSalesHist.setGridViewProperty("gvLot","OptionsDetailShowDetailTabs",False)
+'	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","OptionsViewShowGroupPanel",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetGridViewProperty("gvLot","EnableAppearanceOddRow",True)
+'	Gui.frmSalesHist.GsGCSalesHist.SetGridviewProperty("gvLot","OptionsViewShowAutoFilterRow",True)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Invoice","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_No","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Suffix","Visible",False)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Line","Visible",False)
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Invoice","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Invoice","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Invoice","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_No","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_No","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_No","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Suffix","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Suffix","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Suffix","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Line","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Line","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Order_Line","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Lot","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Lot","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Lot","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Bin","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Bin","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Bin","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Heat","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Heat","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Heat","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Serial","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Serial","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Serial","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Qty_Shipped","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Qty_Shipped","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Qty_Shipped","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Date_Shipped","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Date_Shipped","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Date_Shipped","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Matl_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Matl_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Matl_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Labor_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Labor_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Labor_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Ovhd_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Ovhd_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Ovhd_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Outs_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Outs_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Outs_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Frgt_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Frgt_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Frgt_Cost","HeaderForeColor","White")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Oth_Cost","HeaderFontBold",True)
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Oth_Cost","HeaderBackColor","Green")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Oth_Cost","HeaderForeColor","White")	
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Date_Shipped","DisplayCustomDateTime","d")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Qty_Shipped","DisplayCustomNumeric","#,###,###,##0.##")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Matl_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Labor_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Ovhd_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Outs_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Frgt_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Oth_Cost","DisplayCustomNumeric","#,###,###,##0.0000")
+	
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Qty_Shipped","Caption","Qty Shipped")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Date_Shipped","Caption","Date Shipped")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Matl_Cost","Caption","Matl")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Labor_Cost","Caption","Labor")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Ovhd_Cost","Caption","Ovhd")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Outs_Cost","Caption","Outs")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Frgt_Cost","Caption","Frgt")
+	Gui.frmSalesHist.GsGCSalesHist.SetColumnProperty("gvLot","Oth_Cost","Caption","Oth")
+	
+	F.Data.DataTable.AddRelation("dtSalesHist","Invoice*!*Order_No*!*Order_Suffix*!*Order_Line","dtSalesHist$Lot","Invoice*!*Order_No*!*Order_Suffix*!*Order_Line")
+	
+	Gui.frmSalesHist.GsGCSalesHist.MainView("gvSalesHist")
+	
+	Gui.frmSalesHist.GsGCSalesHist.ResumeLayout
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadGvSalesHist.End
+
+Program.Sub.GsGCSalesHist_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.local.sTitle.Declare
+	V.Local.fProfit.Declare
+	V.Local.sCustomerNo.Declare
+	V.Local.sCustomerName.Declare
+	V.Local.sPart.Declare
+	V.Local.sInvoice.Declare
+	V.Local.sSeries.Declare
+	V.Local.fCost.Declare
+	V.Local.sOrder.Declare
+	V.Local.sWorkOrder.Declare
+	V.Local.sJob.Declare
+	V.Local.sSuffix.Declare
+	V.Local.bSuffix.Declare
+	V.Local.sWOStatus.Declare
+	V.Local.sParams.Declare
+	V.Local.sLoc.Declare
+	V.Local.sSql.Declare
+	V.Local.sOrdSuffix.Declare
+	V.Local.sOrdLine.Declare
+	
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Profit",V.Args.RowIndex,V.Local.fProfit)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Cost",V.Args.RowIndex,V.Local.fCost)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Customer",V.Args.RowIndex,V.Local.sCustomerNo)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Name_Cust_Ship",V.Args.RowIndex,V.Local.sCustomerName)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Invoice",V.Args.RowIndex,V.Local.sInvoice)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Order_No",V.Args.RowIndex,V.Local.sOrder)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Order_Suffix",V.Args.RowIndex,V.Local.sOrdSuffix)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Order_Line",V.Args.RowIndex,V.Local.sOrdLine)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Part",V.Args.RowIndex,V.Local.sPart)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","WorkOrder",V.Args.RowIndex,V.Local.sWorkOrder)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","WOStatus",V.Args.RowIndex,V.Local.sWOStatus)
+	Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Location",V.Args.RowIndex,V.Local.sLoc)
+	
+	F.Intrinsic.String.IsInString(V.Local.sWorkOrder,"-",True,V.Local.bSuffix)
+	F.Intrinsic.Control.If(V.Local.bSuffix)
+		F.Intrinsic.String.Split(V.Local.sWorkOrder,"-",V.Local.sWorkOrder)
+		V.Local.sJob.Set(V.Local.sWorkOrder(0))
+		V.Local.sSuffix.Set(V.Local.sWorkOrder(1))
+	F.Intrinsic.Control.Else
+		V.Local.sJob.Set(V.Local.sWorkOrder(0))
+		V.Local.sSuffix.Set("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+		F.Intrinsic.Control.Case("INVOICE")
+			F.Global.General.CallWrapperAsync(200700,V.Local.sInvoice)
+		
+		F.Intrinsic.Control.CaseAny("ORDER_NO","ORDER_LINE")
+			F.Intrinsic.String.Build("{0}!*!{1}",V.Local.sOrder,V.Local.sCustomerNo,V.Local.sParams)
+			F.Global.General.CallWrapperAsync(7070,V.Local.sParams)
+		
+		F.Intrinsic.Control.Case("WORKORDER")
+			F.Intrinsic.Control.If(V.Local.sWOStatus,=,"ACTIVE")
+				F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A",V.Local.sJob,V.Local.sSuffix,V.Local.sParams)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!H",V.Local.sJob,V.Local.sSuffix,V.Local.sParams)
+			F.Intrinsic.Control.EndIf
+			F.Global.General.CallWrapperAsync(450000,V.Local.sParams)
+		
+		F.Intrinsic.Control.Case("MARGIN")
+			F.Intrinsic.String.Build("Customer: {0}{3}Invoice: {1}{3}Part: {2}",V.Local.sCustomerName.RTrim,V.Local.sInvoice.RTrim,V.Local.sPart.RTrim,V.Ambient.NewLine,V.Local.sTitle)
+			F.Intrinsic.String.Build("Total Cost*!*Profit!*!{0}*!*{1}",V.Local.fCost,V.local.fProfit,V.Local.sSeries)
+			Gui.frmProfit.GsChartProfit.ClearChart
+			Gui.frmProfit.GsChartProfit.CreatePieChart(V.Local.sTitle,"Margin",V.Local.sSeries)
+			Gui.frmProfit.GsChartProfit.SetChartProperty("LEGEND","","Visible",-1,False)
+			
+			Gui.frmProfit..Visible(False)
+			Gui.frmProfit..Show
+			
+		F.Intrinsic.Control.CaseAny("PART","DISPLAY_PART")
+			F.Intrinsic.String.Build("{0}!*!{1}!*!M",V.Local.sPart.Trim,V.Local.sLoc.Trim,V.Local.sParams)
+			F.Global.General.CallWrapperAsync(300011,V.Local.sParams)
+		
+		F.Intrinsic.Control.Case("DESCRIPTION")
+			F.Intrinsic.String.Build("{0}!*!{1}!*!MR",V.Local.sPart.Trim,V.Local.sLoc.Trim,V.Local.sParams)
+			F.Global.General.CallWrapperAsync(7200,V.Local.sParams)
+			
+		F.Intrinsic.Control.Case("RMA")	
+			F.Intrinsic.Control.If(V.Args.CellValue,=,"Y")
+				'show rma's for selected order, order suffix, order line
+				F.ODBC.Connection!Con.OpenCompanyConnection
+				F.Intrinsic.String.Build("Select RMA_ID, QTY_Shipped, Qty_Returned, Qty_Received, Qty_Perf_Complete, Qty_Perf_Sched From V_RMA_Lines Where Order_No = '{0}' and Order_Suffix = '{1}' and Order_Line = '{2}' Union Select RMA_ID, QTY_Shipped, Qty_Returned, Qty_Received, Qty_Perf_Complete, Qty_Perf_Sched From V_RMA_Hist_Lines Where Order_No = '{0}' and Order_Suffix = '{1}' and Order_Line = '{2}'",V.Local.sOrder,V.Local.sOrdSuffix,V.Local.sOrdLine,V.Local.sSql)
+				F.Data.DataTable.CreateFromSQL("TempRMA","con",V.Local.sSql)
+				F.ODBC.Connection!Con.Close
+				F.Data.DataTable.DeleteRow("RMA")
+				F.Data.DataTable.AcceptChanges("RMA")
+				F.Data.DataTable.Merge("TempRMA","RMA",True,4)
+				F.Data.DataTable.Close("TempRMA")
+				
+				Gui.FormRMA..Show
+				
+			F.Intrinsic.Control.EndIf
+			
+	F.Intrinsic.Control.EndSelect
+		
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGCSalesHist_RowCellClick.End
+
+Program.Sub.GsGCSalesHist_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	'Select Order_No,RTrim(Tracking_No) From Order_Hist_Head Order By 1;
+	V.Local.sSQL.Declare
+	V.Local.sInvoice.Declare
+	V.Local.sOrderNo.Declare
+	V.Local.sOrderSuf.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("TrackingNo")
+			F.ODBC.Connection!con.OpenCompanyConnection(300)
+			Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Invoice",V.Args.RowIndex,V.Local.sInvoice)
+			Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Order_No",V.Args.RowIndex,V.Local.sOrderNo)
+			Gui.frmSalesHist.GsGCSalesHist.GetCellValueByColumnName("gvSalesHist","Order_Suffix",V.Args.RowIndex,V.Local.sOrderSuf)
+			F.Intrinsic.String.Build("Select * From Order_Hist_Head Where Invoice = '{0}' And Order_No = '{1}' And Order_Suffix = '{2}';",V.Local.sInvoice,V.Local.sOrderNo,V.Local.sOrderSuf,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTrackingNo","con",V.Local.sSQL,True)
+			F.Data.DataTable.SetValue("dtTrackingNo",-1,"Tracking_No",V.Args.Value)
+			F.Data.DataTable.SaveToDB("dtTrackingNo","con","Order_Hist_Head","Invoice*!*Order_No*!*Order_Suffix",2)
+			F.Data.DataTable.Close("dtTrackingNo")
+			F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndT
+Program.Sub.GsGCSalesHist_CellValueChanged.End
+
+Program.Sub.frmProfit_UnLoad.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmProfit..Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.frmProfit_UnLoad.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sSerialize.Declare
+	V.Local.sFile.Declare
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}{2}5469SaleHist.Txt",V.Caller.GlobalDir,V.Caller.User,V.Caller.CompanyCode,V.Local.sFile)
+	'gvSalesHist
+	Gui.frmSalesHist.GsGCSalesHist.Serialize("gvSalesHist",V.Local.sSerialize)
+	
+	F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sSerialize)
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}{2}5469gvLot.Txt",V.Caller.GlobalDir,V.Caller.User,V.Caller.CompanyCode,V.Local.sFile)
+	'gvLot
+	Gui.frmSalesHist.GsGCSalesHist.Serialize("gvLot",V.Local.sSerialize)
+	
+	F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sSerialize)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sSerialize.Declare
+	V.Local.sFile.Declare
+	V.Local.bRet.Declare
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}{2}5469SaleHist.Txt",V.Caller.GlobalDir,V.Caller.User,V.Caller.CompanyCode,V.Local.sFile)
+	
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet)
+		F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	'gvSalesHist
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.frmSalesHist.GsGCSalesHist.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}{2}5469gvLot.Txt",V.Caller.GlobalDir,V.Caller.User,V.Caller.CompanyCode,V.Local.sFile)
+	
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet)
+		F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.frmSalesHist.GsGCSalesHist.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.picGSS_DblClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmWeb..Show
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.picGSS_DblClick.End
+
+Program.Sub.cmdGSS_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://www.globalshopsolutions.com/","","",0)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdGSS_Click.End
+
+Program.Sub.cmdServ_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-service.com/","","",0)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdServ_Click.End
+
+Program.Sub.cmdUpd_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-updates.com/","","",0)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpd_Click.End
+
+Program.Sub.frmWeb_Unload.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmWeb..Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.frmWeb_Unload.End
+
+Program.Sub.Build_RMA_Table.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	F.Data.DataTable.CreateFromSQL("RMA","con","Select RMA_ID, QTY_Shipped, Qty_Returned, Qty_Received, Qty_Perf_Complete, Qty_Perf_Sched From V_RMA_Lines Where RMA_ID = -1",True)
+	F.ODBC.Connection!Con.Close
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Build_RMA_Table.End
+
+Program.Sub.Set_RMA_Properties.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.FormRMA.GsGridControlRMA.AddGridviewFromDatatable("gvRMA","RMA")
+	
+	Gui.FormRMA.GsGridControlRMA.Anchor(15)
+	
+	Gui.FormRMA.GsGridControlRMA.SetGridviewProperty("gvRMA","Editable",False)
+	Gui.FormRMA.GsGridControlRMA.SetGridviewProperty("gvRMA","ReadOnly",True)
+	Gui.FormRMA.GsGridControlRMA.SetGridviewProperty("gvRMA","Enableappearanceoddrow",True)
+	
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","RMA_ID","caption","RMA")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Shipped","Caption","Qty Shipped")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Returned","Caption","Qty Returned")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Received","Caption","Qty Received")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Complete","Caption","Qty Perf Complete")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Sched","Caption","Qty Perf Sched")
+	
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","RMA_ID","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","RMA_ID","HeaderForeColor","White")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Shipped","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Shipped","HeaderForeColor","White")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Returned","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Returned","HeaderForeColor","White")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Received","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Received","HeaderForeColor","White")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Complete","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Complete","HeaderForeColor","White")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Sched","HeaderBackColor","Green")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Sched","HeaderForeColor","White")
+	
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Shipped","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Returned","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Received","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Complete","DisplayCustomNumeric","#,###,###,##0.0000")
+	Gui.FormRMA.GsGridControlRMA.SetColumnProperty("gvRMA","Qty_Perf_Sched","DisplayCustomNumeric","#,###,###,##0.0000")
+	
+	Gui.FormRMA.GsGridControlRMA.MainView("gvRMA")
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_RMA_Properties.End
+
+Program.Sub.FormRMA_UnLoad.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Data.DataTable.DeleteRow("RMA")
+	F.Data.DataTable.AcceptChanges("RMA")
+	
+	Gui.FormRMA..Visible(False)
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.FormRMA_UnLoad.End
+
+Program.Sub.chkAllDates_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmSalesHist!chkAllDates.Value,=,1)
+		Gui.frmSalesHist.dtpEndDt.Enabled(False)
+		Gui.frmSalesHist.dtpStartDt.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.frmSalesHist.dtpEndDt.Enabled(True)
+		Gui.frmSalesHist.dtpStartDt.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.chkAllDates_Click.End
+
+Program.Sub.cmdUpdateCache_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sSql.Declare
+	V.Local.sDataTable.Declare
+	V.Local.sChildTable.Declare
+	V.Local.sParentFile.Declare
+	V.Local.sChildFile.Declare
+	V.Local.bRet.Declare
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Updating Sales History Cache Data..............................")
+	Gui.frmSalesHist.GsGCSalesHist.Enabled(False)
+	
+	V.Local.sDataTable.Set("TempSalesHist")
+	V.Local.sChildTable.Set("TempLot")
+	
+	F.Intrinsic.String.Build("{0}\Custom",V.Caller.GlobalDir,V.Local.sParentFile)
+	F.Intrinsic.File.DirExists(V.Local.sParentFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Intrinsic.File.CreateDir(V.Local.sParentFile)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469",V.Caller.GlobalDir,V.Local.sParentFile)
+	F.Intrinsic.File.DirExists(V.Local.sParentFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Intrinsic.File.CreateDir(V.Local.sParentFile)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}SalesHist.xml",V.Caller.GlobalDir,V.Caller.CompanyCode,V.Local.sParentFile)
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}SalesHistLot.xml",V.Caller.GlobalDir,V.Caller.CompanyCode,V.Local.sChildFile)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection(999)
+	
+	V.Local.sSQL.Set("Select Coalesce(A.Part,'') AS Part,'' As Display_Part,A.Location,RTrim(A.Product_Line) As Product_Line,'' as Code_Sort,A.Description,RTrim(A.Customer) As Customer,RTrim(A.Name_Cust_Ship) As Name_Cust_Ship,A.Customer_Ship,A.Area,A.Invoice,A.Order_No,A.Order_Line,RTrim(A.Customer_PO) As Customer_PO,'' as Drop_PO,A.Date_Invoice, A.Date_Shipped, A.Must_Dlvr_Date,Cast(A.Qty_Shipped As Float) As Qty_Shipped,Cast(A.Qty_Ordered As Float) As Qty_Ordered,Cast(A.Cost As Float) As Cost,Cast(A.Qty_Shipped*A.Cost As Float) As Total_Cost,Cast(A.Price_Discount As Float) As Price,Cast(A.Extension As Float) As Sales,Cast(A.Extension - (A.Qty_Shipped*A.Cost) As Float) As Profit,Cast(A.Margin/100 As Float) As Margin,(A.Margin * A.Extension) as Margin$,A.Tax_State,A.Tax_1,'' As Descr,Case When A.Flag_Tax_Status = 'E' Then 'Exempt' Else 'Taxable' End As TaxStatus,A.Extension As TaxAmount,A.Tax_Rate_1,Case When A.Flag_Tax_Status = 'E' Then 0.0 Else A.Tax_Rate_1 * A.Extension End As Tax,A.SalesPerson,A.Branch,A.Line_Type,RTrim(A.Ship_Via) As Ship_Via,'' As TrackingNo,Cast(0 As Float) As Matl,Cast(0 As Float) As Labor,Cast(0 As Float) As Ovhd,Cast(0 As Float) As Outs,Cast(0 As Float) As Frgt,Cast(0 As Float) As Oth, '' as RMA,A.Order_No+A.Order_Suffix+A.Order_Line As RMAKey,A.Invoice+A.Order_No+A.Order_Suffix+A.Order_Line As SalesKey,A.Order_No+A.Order_Line As OrderKey,A.Tax_State+A.Tax_1 As TaxKey,A.Order_Suffix,A.Invoice+A.Order_No+A.Order_Suffix As TrackKey From V_Order_Hist_Line A;")
+	F.Data.DataTable.CreateFromSQL(V.Local.sDataTable,"con",V.Local.sSQL,True)
+	F.Intrinsic.Control.If(V.Global.bLongPart)
+		F.Data.DataTable.AddDisplayPartColumn(V.Local.sDataTable,0,"Part","Display_Part")
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.CopyColumn(V.Local.sDataTable,"Part","Display_Part")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.Dictionary.CreateFromSQL("Branch","con","Select Order_No, Branch From V_Order_Hist_Head")
+	F.Data.Dictionary.SetDefaultReturn("Branch","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"Branch","Order_No","Branch")
+	F.Data.Dictionary.Close("Branch")
+	
+	F.Data.Dictionary.CreateFromSQL("CustShip","con","Select Order_No, Customer_Ship From V_Order_Hist_Head")
+	F.Data.Dictionary.SetDefaultReturn("CustShip","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"CustShip","Order_No","Customer_Ship")
+	F.Data.Dictionary.Close("CustShip")
+	
+	F.Data.Dictionary.CreateFromSQL("CustShipName","con","Select Customer, Name_Customer_Ship From V_Customer_ShipTo")
+	F.Data.Dictionary.SetDefaultReturn("CustShipName","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"CustShipName","Customer","Name_Cust_Ship")
+	F.Data.Dictionary.Close("CustShipName")
+	
+	F.Data.Dictionary.CreateFromSQL("Sort","con","Select Part, Code_Sort From V_Inventory_Mstr")
+	F.Data.Dictionary.SetDefaultReturn("Sort","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"Sort","Part","Code_Sort")
+	F.Data.Dictionary.Close("Sort")
+	
+	Gui.frmSalesHist.pgbStatus.Value(15)
+	
+	V.Local.sSQL.Set("Select Invoice, Order_NO, Order_Suffix, Order_Line, Lot, Bin, Heat, Serial, Qty_Shipped, Date_Shipped, Cost, Matl_Cost, Labor_Cost, Ovhd_Cost, Outs_Cost, Frgt_Cost, Oth_Cost From V_Order_Hist_Lot Where Invoice <> ''")
+	F.Data.DataTable.CreateFromSQL(V.Local.sChildTable,"con",V.Local.sSQL,True)
+	
+	F.Data.Dictionary.CreateFromSQL("RMA","con","Select Order_No+Order_Suffix+Order_Line, 'Y' From V_RMA_Lines Union Select Order_No+Order_Suffix+Order_Line, 'Y' From V_RMA_Hist_Lines")
+	F.Data.Dictionary.SetDefaultReturn("RMA"," ")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"RMA","RMAKEY","RMA")
+	F.Data.Dictionary.Close("RMA")
+	
+	F.Data.Dictionary.CreateFromSQL("Drop","con","Select Order_No+Order_Line, PO+'-'+PO_Line From V_PO_Drop_Ship")
+	F.Data.Dictionary.SetDefaultReturn("Drop"," ")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"Drop","OrderKey","Drop_Po")
+	F.Data.Dictionary.Close("Drop")
+	
+	F.Data.Dictionary.Exists("dCust",V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Data.Dictionary.CreateFromSQL("dCust","con","Select ' All Customers' As Customer,' All Customers' As Name_Customer Union Select RTrim(Customer) As Customer,RTrim(Name_Customer) As Name_Customer From Customer_Master Where Rec = '1'")
+	F.Intrinsic.Control.EndIf
+	'Replace Ship To Customer Name with Bill To Name
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dCust","Customer","Name_Cust_Ship")
+	
+	Gui.frmSalesHist.pgbStatus.Value(20)
+	
+	'Tax Description
+	F.Data.Dictionary.CreateFromSQL("dTaxDesc","con","Select Zone+Auth,Descr from V_AR_Tax_Tables;")
+	F.Data.Dictionary.SetDefaultReturn("dTaxDesc","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dTaxDesc","TaxKey","Descr")
+	F.Data.Dictionary.Close("dTaxDesc")
+	Gui.frmSalesHist.pgbStatus.Value(25)
+	'Cost Elements from OE_Sys_Cost_Elem
+	F.Data.DataTable.CreateFromSQL("dtCostElem","con","Select Invoice+Order_No+Seq+Line As SalesKey,Cost,Matl,Labor,Ovhd,Outs,Frgt,Oth,Part,Locn from V_OE_Sys_Cost_Elem;",True)
+	'Cost
+'	F.Data.Dictionary.CreateFromDataTable("dCost","dtCostElem","SalesKey","Cost")
+'	F.Data.Dictionary.SetDefaultReturn("dCost",0)
+'	F.Data.DataTable.FillFromDictionary("dtSalesHist","dCost","SalesKey","Cost")
+'	F.Data.Dictionary.Close("dCost")
+	Gui.frmSalesHist.pgbStatus.Value(30)
+	'Matl
+	F.Data.Dictionary.CreateFromDataTable("dMatl","dtCostElem","SalesKey","Matl")
+	F.Data.Dictionary.SetDefaultReturn("dMatl",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dMatl","SalesKey","Matl")
+	F.Data.Dictionary.Close("dMatl")
+	Gui.frmSalesHist.pgbStatus.Value(35)
+	'Labor
+	F.Data.Dictionary.CreateFromDataTable("dLabor","dtCostElem","SalesKey","Labor")
+	F.Data.Dictionary.SetDefaultReturn("dLabor",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dLabor","SalesKey","Labor")
+	F.Data.Dictionary.Close("dLabor")
+	Gui.frmSalesHist.pgbStatus.Value(40)
+	'Ovhd
+	F.Data.Dictionary.CreateFromDataTable("dOvhd","dtCostElem","SalesKey","Ovhd")
+	F.Data.Dictionary.SetDefaultReturn("dOvhd",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dOvhd","SalesKey","Ovhd")
+	F.Data.Dictionary.Close("dOvhd")
+	Gui.frmSalesHist.pgbStatus.Value(45)
+	'Outs
+	F.Data.Dictionary.CreateFromDataTable("dOuts","dtCostElem","SalesKey","Outs")
+	F.Data.Dictionary.SetDefaultReturn("dOuts",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dOuts","SalesKey","Outs")
+	F.Data.Dictionary.Close("dOuts")
+	Gui.frmSalesHist.pgbStatus.Value(50)
+	'Frgt
+	F.Data.Dictionary.CreateFromDataTable("dFrgt","dtCostElem","SalesKey","Frgt")
+	F.Data.Dictionary.SetDefaultReturn("dFrgt",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dFrgt","SalesKey","Frgt")
+	F.Data.Dictionary.Close("dFrgt")
+	Gui.frmSalesHist.pgbStatus.Value(55)
+	'Oth
+	F.Data.Dictionary.CreateFromDataTable("dOth","dtCostElem","SalesKey","Oth")
+	F.Data.Dictionary.SetDefaultReturn("dOth",0)
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dOth","SalesKey","Oth")
+	F.Data.Dictionary.Close("dOth")
+	F.Data.DataTable.Close("dtCostElem")
+	Gui.frmSalesHist.pgbStatus.Value(60)
+	'TrackingNo from Order_Hist_Head
+	F.Data.Dictionary.CreateFromSQL("dTrackNo","con","Select Invoice+Order_No+Order_Suffix,RTrim(Tracking_No) From Order_Hist_Head Order By 1;")
+	F.Data.Dictionary.SetDefaultReturn("dTrackNo","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dTrackNo","TrackKey","TrackingNo")
+	F.Data.Dictionary.Close("dTrackNo")
+	Gui.frmSalesHist.pgbStatus.Value(65)
+	'Work Order
+	F.Data.DataTable.AddColumn(V.Local.sDataTable,"WorkOrder",String)
+	F.Data.Dictionary.CreateFromSQL("dWO","con","Select Order_No+Order_Line As OrderKey,If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO From V_Order_To_WO Order By OrderKey;")
+	F.Data.Dictionary.SetDefaultReturn("dWO","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dWO","OrderKey","WorkOrder")
+	F.Data.Dictionary.Close("dWO")
+	'WO Status (Active/History)
+	F.Data.DataTable.AddColumn(V.Local.sDataTable,"WOStatus",String)
+	F.Data.Dictionary.CreateFromSQL("dWOStatus","con","Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO,'Active' As Status From V_Job_Header Union Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO,'History' As Status From V_Job_Hist_Mast Order By Status,WO;")
+	F.Data.Dictionary.SetDefaultReturn("dWOStatus","")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"dWOStatus","WorkOrder","WOStatus")
+	F.Data.Dictionary.Close("dWOStatus")
+	
+	F.Data.DataTable.AddColumn(V.Local.sDataTable,"Hours_Actual",Float)
+	F.Data.DataTable.AddColumn(V.Local.sDataTable,"Hours_Estimated",Float)
+	
+	F.Data.Dictionary.CreateFromSQL("Acutal","con","Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO, Sum(Hours_Actual) as Hours_Actual From V_JOB_HIST_OPS Group By WO Union Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO, Sum(Hours_Actual) as Hours_Actual From V_JOB_OPERATIONS Group By WO;")
+	F.Data.Dictionary.SetDefaultReturn("Acutal","0.00")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"Acutal","WorkOrder","Hours_Actual")
+	F.Data.Dictionary.Close("Acutal")
+	
+	F.Data.Dictionary.CreateFromSQL("Estimate","con","Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO, Sum(Hours_Estimated) as Hours_Estimated From V_JOB_HIST_OPS Group By WO Union Select If(RTrim(Suffix) = '',Job,Job+'-'+Suffix) As WO, Sum(Hours_Estimated) as Hours_Estimated From V_JOB_OPERATIONS Group By WO;")
+	F.Data.Dictionary.SetDefaultReturn("Estimate","0.00")
+	F.Data.DataTable.FillFromDictionary(V.Local.sDataTable,"Estimate","WorkOrder","Hours_Estimated")
+	F.Data.Dictionary.Close("Estimate")
+	
+	'Remove Columns
+	F.Data.DataTable.RemoveColumn(V.Local.sDataTable,"SalesKey")
+	F.Data.DataTable.RemoveColumn(V.Local.sDataTable,"OrderKey")
+	F.Data.DataTable.RemoveColumn(V.Local.sDataTable,"TaxKey")
+	F.Data.DataTable.RemoveColumn(V.Local.sDataTable,"TrackKey")
+	F.Data.DataTable.RemoveColumn(V.Local.sDataTable,"RMAKey")
+	
+	F.Data.DataTable.SaveToXML(V.Local.sDataTable,0,True,V.Local.sParentFile)
+	F.Data.DataTable.SaveToXML(V.Local.sChildTable,0,True,V.Local.sChildFile)
+	
+	F.Intrinsic.Variable.ArgExists("Merge",V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Data.DataTable.DeleteRow("dtSalesHist")
+		F.Data.DataTable.AcceptChanges("dtSalesHist")
+		F.Data.DataTable.DeleteRow("dtSalesHist$Lot")
+		F.Data.DataTable.AcceptChanges("dtSalesHist$Lot")
+		F.Data.DataTable.Merge(V.Local.sDataTable,"dtSalesHist",False,4)
+		F.Data.DataTable.Merge(V.Local.sChildTable,"dtSalesHist$Lot",False,4)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!con.Close
+	
+	F.Data.DataTable.Close(V.Local.sDataTable)
+	F.Data.DataTable.Close(V.Local.sChildTable)
+	
+	Gui.frmSalesHist.GsGCSalesHist.Enabled(True)
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdateCache_Click.End
+
+Program.Sub.Create_DataTables.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sParentFile.Declare
+	V.Local.sChildFile.Declare
+	V.Local.bRet.Declare
+	V.Local.dStart.Declare
+	V.Local.dEnd.Declare
+	V.Local.sFilter.Declare
+	
+	V.Local.dStart.Set(V.Screen.frmSalesHist!dtpStartDt.Value)
+	V.Local.dEnd.Set(V.Screen.frmSalesHist!dtpEndDt.Value)
+	
+	F.Intrinsic.String.Build("{0}\Custom",V.Caller.GlobalDir,V.Local.sParentFile)
+	F.Intrinsic.File.DirExists(V.Local.sParentFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Intrinsic.File.CreateDir(V.Local.sParentFile)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469",V.Caller.GlobalDir,V.Local.sParentFile)
+	F.Intrinsic.File.DirExists(V.Local.sParentFile,V.Local.bRet)
+	F.Intrinsic.Control.If(V.Local.bRet,=,False)
+		F.Intrinsic.File.CreateDir(V.Local.sParentFile)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}SalesHist.xml",V.Caller.GlobalDir,V.Caller.CompanyCode,V.Local.sParentFile)
+	F.Intrinsic.String.Build("{0}\Custom\5469\{1}SalesHistLot.xml",V.Caller.GlobalDir,V.Caller.CompanyCode,V.Local.sChildFile)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtSalesHist.Exists,=,False)
+		F.Intrinsic.File.Exists(V.Local.sParentFile,V.Local.bRet)
+		F.Intrinsic.Control.If(V.Local.bRet)
+			F.Data.DataTable.CreateFromXML("dtSalesHist",V.Local.sParentFile,True)
+			F.Data.DataTable.CreateFromXML("dtSalesHistLot",V.Local.sChildFile,True)
+			F.Data.DataView.Create("dtSalesHistLot","VTemp",22,"","")
+			F.Data.DataView.ToDataTable("dtSalesHistLot","VTemp","dtSalesHist$Lot",True)
+			F.Data.DataTable.Close("dtSalesHistLot")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(cmdUpdateCache_Click,"Merge","N")
+			F.Data.DataTable.CreateFromXML("dtSalesHist",V.Local.sParentFile,True)
+			F.Data.DataTable.CreateFromXML("dtSalesHistLot",V.Local.sChildFile,True)
+			F.Data.DataView.Create("dtSalesHistLot","VTemp",22,"","")
+			F.Data.DataView.ToDataTable("dtSalesHistLot","VTemp","dtSalesHist$Lot",True)
+			F.Data.DataTable.Close("dtSalesHistLot")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Date_Invoice >= '{0}' And Date_Invoice <= '{1}'",V.Local.dStart,V.Local.dEnd,V.Local.sFilter)
+	
+	F.Data.DataView.Create("dtSalesHist","dvSalesHist",22,V.Local.sFilter,"")
+	F.Data.DataView.Create("dtSalesHist$Lot","dvSalesHistLot")
+	F.Intrinsic.Control.CallSub(LoadGvSalesHist)
+		
+	F.Intrinsic.Control.ExitSub
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.Create_DataTables.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$rking$}$20230816131154696$}$QNdZLVy4bWuiWa9jh1ZTiKHvMPldSPXe7KY9L8OEdJp8EOAiTnCbCfiCYlrGO8VsU5jv8FJ9ZZY=
+Program.Sub.Comments.End
